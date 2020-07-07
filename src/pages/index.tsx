@@ -1,6 +1,12 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
-export default function Home() {
+type Props = {
+  title: string;
+};
+
+const a = 'foo';
+
+export default function Home({ title = 'Title teste' }: Props) {
   return (
     <div className="container">
       <Head>
@@ -12,6 +18,8 @@ export default function Home() {
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <h2>{title}</h2>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
@@ -205,5 +213,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
